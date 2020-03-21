@@ -89,6 +89,33 @@ void print_in_range(node* root,int k1,int k2){
 		return;
 	}
 }
+node* delete_node(node* &root,int key){
+	if(!root)
+		return root;
+	if(root->data == key){
+		//case 1. leaf node.
+		if(root->left == NULL && root->right){
+			delete root;
+			return NULL:
+		}
+		//case 2. one child.
+		if(root->left == NULL && root->right != NULL){
+			node* temp = root->right;
+			delete root;
+			return temp;
+		}
+		if(root->left != NULL && root->right == NULL){
+			node* temp = root->left;
+			delete root;
+			return temp;
+		}
+		//case 3. two child.
+		
+		
+			
+
+	}
+}
 int main(){
 	node* root = NULL;
 	int arr[10] = {5,3,7,6,2,9,10,1,4,8};
