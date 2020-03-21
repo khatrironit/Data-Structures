@@ -45,6 +45,14 @@ void insert_in_BST(node* &root,int data){
 	return;
 
 }
+void preorder_print_tree(node* root){
+	if(!root)
+		return;
+	cout<<root->data<<" ";
+	preorder_print_tree(root->left);
+	preorder_print_tree(root->right);
+	return;
+}
 void inorder_print(node* root){
 	if(!root)
 		return;
@@ -52,6 +60,34 @@ void inorder_print(node* root){
 	cout<<root->data<<" ";
 	inorder_print(root->right);
 	return;
+}
+bool search(node* root,int key){
+	if(!root)
+		return false;
+	if(root->data == key)
+		return true;
+	if(root->data > key)
+		return search(root->left);
+	else
+		return search(root->right);
+}
+void print_in_range(node* root,int k1,int k2){
+	if(!root)
+		return ;
+	if(root->data >= k1 && root->data <= k2){
+		print_in_range(root->leftt);
+		cout<<root->data<<" ";
+		print_in_range(root->right);
+		return;
+	}
+	if(root->data > k2){
+		print_in_range(root->left);
+		return;
+	}
+	if(root->data < k1){
+		print_in_range(root->right);
+		return;
+	}
 }
 int main(){
 	node* root = NULL;
