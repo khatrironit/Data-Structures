@@ -110,11 +110,20 @@ node* delete_node(node* &root,int key){
 			return temp;
 		}
 		//case 3. two child.
-		node*
-		
-			
-
+		node* parent = root->right;
+		node* it = root->right;
+		node* child = root->left;
+		while(it->left){
+			it = it->left;
+		}
+		it->left = child;
+		return parent;
 	}
+	else if(root->data > key)
+		root->left = delete_node(root->left,key);
+	else
+		root->right = delete_node(root->right,key);
+	return root;
 }
 int main(){
 	node* root = NULL;
