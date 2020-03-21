@@ -67,36 +67,36 @@ bool search(node* root,int key){
 	if(root->data == key)
 		return true;
 	if(root->data > key)
-		return search(root->left);
+		return search(root->left,key);
 	else
-		return search(root->right);
+		return search(root->right,key);
 }
 void print_in_range(node* root,int k1,int k2){
 	if(!root)
 		return ;
 	if(root->data >= k1 && root->data <= k2){
-		print_in_range(root->leftt);
+		print_in_range(root->left,k1,k2);
 		cout<<root->data<<" ";
-		print_in_range(root->right);
+		print_in_range(root->right,k1,k2);
 		return;
 	}
 	if(root->data > k2){
-		print_in_range(root->left);
+		print_in_range(root->left,k1,k2);
 		return;
 	}
 	if(root->data < k1){
-		print_in_range(root->right);
+		print_in_range(root->right,k1,k2);
 		return;
 	}
 }
-node* delete_node(node* &root,int key){
+node* delete_node(node* root,int key){
 	if(!root)
-		return root;
+		return NULL;
 	if(root->data == key){
 		//case 1. leaf node.
-		if(root->left == NULL && root->right){
+		if(root->left == NULL && root->right == NULL){
 			delete root;
-			return NULL:
+			return NULL;
 		}
 		//case 2. one child.
 		if(root->left == NULL && root->right != NULL){
@@ -112,14 +112,16 @@ node* delete_node(node* &root,int key){
 		//case 3. two child.
 		node* parent = root->right;
 		node* it = root->right;
-		node* child = root->left;
+		root->right = NULL;
 		while(it->left){
 			it = it->left;
 		}
-		it->left = child;
+		it->left = root->left;
+		root->left = NULL;
+		delete root;
 		return parent;
 	}
-	else if(root->data > key)
+	if(root->data > key)
 		root->left = delete_node(root->left,key);
 	else
 		root->right = delete_node(root->right,key);
@@ -132,5 +134,13 @@ int main(){
 		insert_in_BST(root,arr[i]);
 	}
 	inorder_print(root);
+
+	cout<<endl<<search(root,9)<<endl;
+	print_in_range(root,3,9);
+	node* root1 = delete_node(root,5);
+	//root = delete_node(root,2);
+	cout<<endl;
+	inorder_print(root1);
+
 	return 0;
 }
