@@ -110,7 +110,7 @@ node* delete_node(node* &root,int key){
 			return temp;
 		}
 		//case 3. two child.
-		
+		node*
 		
 			
 
