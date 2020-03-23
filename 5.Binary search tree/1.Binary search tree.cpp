@@ -127,20 +127,40 @@ node* delete_node(node* root,int key){
 		root->right = delete_node(root->right,key);
 	return root;
 }
+bool isBST(node* root,int minv = INT_MIN,int maxv = INT_MAX){
+	if(!root)
+		return true;
+	if((root->data >= minv && root->data <=maxv) && isBST(root->left,minv,root->data) && isBST(root->right),root->data,maxv)
+		return true;
+	else 
+		return false;
+}
+node* BST_from_sorted_array(int *arr,int s,int e){
+	if(s>e)
+		return NULL;
+	int mid = (s+e)/2;
+	node* root = new node(arr[mid]);
+	root->left = BST_from_sorted_array(arr,s,mid-1);
+	root->right = BST_from_sorted_array(arr,mid+1,e);
+	return root;
+}
 int main(){
-	node* root = NULL;
-	int arr[10] = {5,3,7,6,2,9,10,1,4,8};
-	for(int i=0;i<10;i++){
-		insert_in_BST(root,arr[i]);
-	}
-	inorder_print(root);
+	//node* root = NULL;
+	int arr[10] = {1,2,3,4,5,6,7,8,9,10};
+	// for(int i=0;i<10;i++){
+	// 	insert_in_BST(root,arr[i]);
+	// }
+	// inorder_print(root);
 
-	cout<<endl<<search(root,9)<<endl;
-	print_in_range(root,3,9);
-	node* root1 = delete_node(root,5);
-	//root = delete_node(root,2);
-	cout<<endl;
-	inorder_print(root1);
+	// cout<<endl<<search(root,9)<<endl;
+	// print_in_range(root,3,9);
+	// node* root1 = delete_node(root,5);
+	// //root = delete_node(root,2);
+	// cout<<endl;
+	// inorder_print(root1);
+	node* root = BST_from_sorted_array(arr,0,9);
+	//cout<<endl<<isBST(root);
+	inorder_print(root);
 
 	return 0;
 }
