@@ -14,6 +14,12 @@ struct node{
 		left = NULL;
 		right = NULL;
 	}
+	~node(){
+		if(left)
+			delete left;
+		if(right)
+			delete right;
+	}
 };
 
 void create_tree(node* &root){
