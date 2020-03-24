@@ -47,7 +47,7 @@ void buildTree(int * arr,int s,int e,sum *tree,int index){
 sum queryTree(sum *tree,int s,int e,int qs,int qe,int index){
 	// case 1. no overlap-return INT_MIN.
 	if(qs>e || qe<s){
-			return ((sum){INT_MIN,INT_MIN,INT_MIN,INT_MIN});
+			return ((sum){INT_MIN,INT_MIN,0,INT_MIN});
 	}
 	// case 2. complete overlap-return tree[index]
 	if(qs<=s && qe>=e){
