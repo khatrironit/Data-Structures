@@ -1,7 +1,7 @@
 //if (A.B)%m = 1 then B is the multiplicative modulo inverse of A. A and m must be co-prime.
 
 
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 pair<int,int>modulo_inverse(int A,int m){
