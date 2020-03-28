@@ -1,6 +1,6 @@
 //given a number n find the number of prime numbers less than equal to n.
 
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 int sieve(int n){
