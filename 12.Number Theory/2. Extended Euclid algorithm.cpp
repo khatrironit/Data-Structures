@@ -1,6 +1,6 @@
 //given a linear diophantine eqn ax + by = gcd(a,b). find integral values of x and y.
 
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 pair<int,int> Extended_euclid(int a,int b){//first = x and second = y
