@@ -1,6 +1,6 @@
 //fenwick tree can only be used to find max till an index i.e. in range(1,index) as it can only be used in prefix type problems
 //to find max in a given range use segment tree.
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 void update(int *BIT,int n,int index,int value){
