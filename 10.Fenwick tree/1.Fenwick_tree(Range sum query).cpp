@@ -1,4 +1,4 @@
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 void update(int *BIT,int n,int index,int incr){
