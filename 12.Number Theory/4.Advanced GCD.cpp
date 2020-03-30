@@ -1,7 +1,7 @@
 // find gcd(a,b) where a<10^250(can't be stored in int or long long) and b<40,000
 
 
-#include<iostream>
+#include<bits/stdc++.h>
 #include<algorithm>
 using namespace std;
 
