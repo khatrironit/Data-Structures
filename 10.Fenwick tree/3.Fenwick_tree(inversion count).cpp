@@ -1,6 +1,6 @@
 //inversion count = all pairs in a array such that i<j but arr[i] > arr[j]
 
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 
