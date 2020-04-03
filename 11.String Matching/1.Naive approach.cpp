@@ -1,6 +1,6 @@
 //print the indices of string where pattern is found.
 
-#include<iostream>
+#include<bits/stdc++.h>
 using namespace std;
 
 void naiveMatching(string s,string p);
