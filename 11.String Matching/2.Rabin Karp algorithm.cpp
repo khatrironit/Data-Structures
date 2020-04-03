@@ -1,5 +1,5 @@
 //uses a rolling hash function to generate a unique hash for pattern and substrings.
-//if matched then double check for that particular substring only.
+//if matched then double check for that particular substring.
 
 
 #include<bits/stdc++.h>
