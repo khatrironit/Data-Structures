@@ -3,7 +3,7 @@
 
 
 //max pair sum = max_element + second_max_element
-#include<iostream>
+#include<bits/stdc++.h>
 #include<climits>
 using namespace std;
 
