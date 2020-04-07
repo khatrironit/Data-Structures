@@ -1,4 +1,4 @@
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
 void build_Segment_Tree(int *a,int s,int e,int *tree,int index){
