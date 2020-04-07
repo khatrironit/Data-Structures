@@ -2,7 +2,7 @@
 // (number of queries > 100000)
 
 
-#include<bits/stdc++.h>
+#include<iostream>
 using namespace std;
 
 struct sum {
