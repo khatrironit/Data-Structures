@@ -1,4 +1,4 @@
-#include <iostream>
+#include <bits/stcd++.h>
 using namespace std;
 
 struct node{
