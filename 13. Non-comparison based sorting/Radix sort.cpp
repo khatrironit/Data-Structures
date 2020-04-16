@@ -13,7 +13,7 @@ void radix_helper(vector<int> &arr,int placeholder){
 	for(int i=0;i<n;i++){
 		count_sort[(arr[i]/placeholder)%10]++;   //arr[i]/placeholder % 10 gives the digit at place placeholder.
 	}
-	//find cumulative count_sort  that will give us the index+1 till which arr needs to be filled with that particular element.
+	//find the cumulative count_sort  that will give us the index+1 till which arr needs to be filled with that particular element.
 	for(int i=1;i<10;i++)
 		count_sort[i] = count_sort[i] + count_sort[i-1]; 
 
