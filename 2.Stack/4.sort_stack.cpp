@@ -1,5 +1,4 @@
 #include<bits/stdc++.h>
-#include<stack>
 using namespace std;
 
 void place_sorted(stack<int> &s,int x){//places the int x at its right position.
